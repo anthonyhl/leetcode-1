@@ -1,7 +1,7 @@
 import java.util.HashSet;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-17
  * Time: 21:36
  * Declaration: All Rights Reserved !!!
@@ -14,8 +14,8 @@ public class Solution {
      * equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those
      * numbers for which this process ends in 1 are happy numbers.
      *
-     * ÌâÄ¿ÒªÇó¶ÔÈÎÒâÒ»¸öÕıÕûÊı£¬²»¶Ï¸÷¸öÊıÎ»ÉÏÊı×ÖµÄÆ½·½ºÍ£¬Èô×îÖÕÊÕÁ²Îª1£¬Ôò¸ÃÊı×ÖÎªhappy number£¬
-     * ·ñÔò³ÌĞò¿ÉÄÜ´ÓÄ³¸öÊı¿ªÊ¼ÏİÈëÑ­»·¡£
+     * é¢˜ç›®è¦æ±‚å¯¹ä»»æ„ä¸€ä¸ªæ­£æ•´æ•°ï¼Œä¸æ–­å„ä¸ªæ•°ä½ä¸Šæ•°å­—çš„å¹³æ–¹å’Œï¼Œè‹¥æœ€ç»ˆæ”¶æ•›ä¸º1ï¼Œåˆ™è¯¥æ•°å­—ä¸ºhappy numberï¼Œ
+     * å¦åˆ™ç¨‹åºå¯èƒ½ä»æŸä¸ªæ•°å¼€å§‹é™·å…¥å¾ªç¯ã€‚
      *
      * @param n
      * @return
@@ -26,13 +26,13 @@ public class Solution {
             return false;
         }
 
-        // ÓÃÓÚ±£´æÖĞ¼ä³öÏÖµÄ½á¹û
+        // ç”¨äºä¿å­˜ä¸­é—´å‡ºç°çš„ç»“æœ
         HashSet<Integer> set = new HashSet<>(32);
 
         int tmp;
         int newN;
 
-        // n²»Îª1£¬²¢ÇÒnµÄÖµ²»ÄÜÖØ¸´³öÏÖ£¬·ñÔò»áËÀÑ­»·
+        // nä¸ä¸º1ï¼Œå¹¶ä¸”nçš„å€¼ä¸èƒ½é‡å¤å‡ºç°ï¼Œå¦åˆ™ä¼šæ­»å¾ªç¯
         while (n != 1 && !set.contains(n)) {
             set.add(n);
             newN = 0;

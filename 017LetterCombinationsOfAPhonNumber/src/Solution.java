@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:23
  * Declaration: All Rights Reserved !!!
@@ -19,15 +19,15 @@ public class Solution {
             "tuv",
             "wxyz",
     };
-    private List<String> result;    // ´æ´¢×îÖÕ½á¹û
-    private char[] chars;           // ±£´æÈ¥µô0£¬1×Ö·ûµÄ½á¹û
-    private char[] curResult;       // ´æ´¢ÖĞ¼ä½á¹û
-    private int end = 0;            // ×Ö·ûÊı×éÖĞµÄµÚÒ»¸öÎ´Ê¹ÓÃµÄÎ»ÖÃ
-    private int handle = 0;         // µ±Ç°´¦ÀíµÄÊÇµÚ¼¸¸ö×Ö·ûÊı×Ö
+    private List<String> result;    // å­˜å‚¨æœ€ç»ˆç»“æœ
+    private char[] chars;           // ä¿å­˜å»æ‰0ï¼Œ1å­—ç¬¦çš„ç»“æœ
+    private char[] curResult;       // å­˜å‚¨ä¸­é—´ç»“æœ
+    private int end = 0;            // å­—ç¬¦æ•°ç»„ä¸­çš„ç¬¬ä¸€ä¸ªæœªä½¿ç”¨çš„ä½ç½®
+    private int handle = 0;         // å½“å‰å¤„ç†çš„æ˜¯ç¬¬å‡ ä¸ªå­—ç¬¦æ•°å­—
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a digit string, return all possible letter combinations that the number could represent.
      * A mapping of digit to letters (just like on the telephone buttons) is given below.
      *
@@ -37,12 +37,12 @@ public class Solution {
      * Note: Although the above answer is in lexicographical order, your answer
      * could be in any order you want.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÊı×Ö´®£¬·µ»ØÊı×ÖÉÏËùÓĞ×Ö·ûµÄËùÓĞ×éºÏ£¬Êı×Öµ½×Ö·ûµÄÓ³ÉäÈçÉÏÍ¼ËùÊ¾¡£
-     * ×¢Òâ£º ¾¡¹ÜÉÏÃæµÄ½á¹ûÒÔ×Ö·ûË³ĞòÅÅÁĞµÄ£¬Äã¿ÉÒÔÒÔÈÎºÎË³Ğò·µ»Ø½á¹û¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªæ•°å­—ä¸²ï¼Œè¿”å›æ•°å­—ä¸Šæ‰€æœ‰å­—ç¬¦çš„æ‰€æœ‰ç»„åˆï¼Œæ•°å­—åˆ°å­—ç¬¦çš„æ˜ å°„å¦‚ä¸Šå›¾æ‰€ç¤ºã€‚
+     * æ³¨æ„ï¼š å°½ç®¡ä¸Šé¢çš„ç»“æœä»¥å­—ç¬¦é¡ºåºæ’åˆ—çš„ï¼Œä½ å¯ä»¥ä»¥ä»»ä½•é¡ºåºè¿”å›ç»“æœã€‚
      *
-     * ½âÌâË¼Â·
-     * ÓÃÒ»¸öÊı×é±£´æÊı×ÖºÍ×ÖµÄÓ³Éä¹ØÏµ£¬¸ù¾İÊı×Ö´®µÄÊäÈë£¬ÕÒµ½¶ÔÓ¦µÄ×Ö·û£¬×éºÏ½á¹û¡£
+     * è§£é¢˜æ€è·¯
+     * ç”¨ä¸€ä¸ªæ•°ç»„ä¿å­˜æ•°å­—å’Œå­—çš„æ˜ å°„å…³ç³»ï¼Œæ ¹æ®æ•°å­—ä¸²çš„è¾“å…¥ï¼Œæ‰¾åˆ°å¯¹åº”çš„å­—ç¬¦ï¼Œç»„åˆç»“æœã€‚
      * </pre>
      *
      * @param digits
@@ -55,8 +55,8 @@ public class Solution {
 
             chars = digits.toCharArray();
 
-            // ¶Ô×Ö·û´®½øĞĞ´¦Àí£¬È¥µô0ºÍ1
-            // ÕÒµÚÒ»¸ö0»òÕß1µÄÎ»ÖÃ
+            // å¯¹å­—ç¬¦ä¸²è¿›è¡Œå¤„ç†ï¼Œå»æ‰0å’Œ1
+            // æ‰¾ç¬¬ä¸€ä¸ª0æˆ–è€…1çš„ä½ç½®
             while (end < digits.length() && chars[end] != '0' && chars[end] != '1') {
                 end++;
             }
@@ -71,8 +71,8 @@ public class Solution {
             }
 
             curResult = new char[end];
-            // while½áÊøºó£¬endÎªÓĞĞ§×Ö·ûµÄ³¤¶È
-            handle = 0; // Ö¸ÏòµÚÒ»¸öÓĞĞ§×Ö·ûµÄÎ»ÖÃ
+            // whileç»“æŸåï¼Œendä¸ºæœ‰æ•ˆå­—ç¬¦çš„é•¿åº¦
+            handle = 0; // æŒ‡å‘ç¬¬ä¸€ä¸ªæœ‰æ•ˆå­—ç¬¦çš„ä½ç½®
 
             letterCombinations();
         }

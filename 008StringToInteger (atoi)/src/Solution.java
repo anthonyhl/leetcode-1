@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:13
  * Declaration: All Rights Reserved !!!
@@ -7,20 +7,20 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Implement atoi to convert a string to an integer.
      * Hint: Carefully consider all possible input cases. If you want a challenge,
      * please do not see below and ask yourself what are the possible input cases.
      * Notes: It is intended for this problem to be specified vaguely (ie, no given
      * input specs). You are responsible to gather all the input requirements up front.
      *
-     * ÌâÄ¿´óÒâ
-     * ¡¡¡¡ÊµÏÖÒ»¸öatoiº¯Êı£¬½«×Ö·û´®×ª³ÉÕûĞÎ
-     * ¡¡¡¡Òªµã£º¿¼ÂÇËùÓĞµÄÊäÈëÇé¿ö¡£
+     * é¢˜ç›®å¤§æ„
+     * ã€€ã€€å®ç°ä¸€ä¸ªatoiå‡½æ•°ï¼Œå°†å­—ç¬¦ä¸²è½¬æˆæ•´å½¢
+     * ã€€ã€€è¦ç‚¹ï¼šè€ƒè™‘æ‰€æœ‰çš„è¾“å…¥æƒ…å†µã€‚
      *
-     * ½âÌâË¼Â·
-     * ¡¡¡¡Ç°µ¼×Ö·ûÊÇ+»ò-»òÕßÃ»ÓĞ£¬½ÓÏÂÀ´ÊäÈëµÄÊÇÊı×Ö£¬Êı×Ö²»ÄÜÕûÊıÄÜ±íÊ¾µÄ×î´ó»ò×îĞ¡Êı¡£
-     * Èç¹û³¬¹ı¾Í·µ»Ø¶ÔÓ¦µÄ×îĞ¡»òÕß×îĞ¡µÄÖµ¡£
+     * è§£é¢˜æ€è·¯
+     * ã€€ã€€å‰å¯¼å­—ç¬¦æ˜¯+æˆ–-æˆ–è€…æ²¡æœ‰ï¼Œæ¥ä¸‹æ¥è¾“å…¥çš„æ˜¯æ•°å­—ï¼Œæ•°å­—ä¸èƒ½æ•´æ•°èƒ½è¡¨ç¤ºçš„æœ€å¤§æˆ–æœ€å°æ•°ã€‚
+     * å¦‚æœè¶…è¿‡å°±è¿”å›å¯¹åº”çš„æœ€å°æˆ–è€…æœ€å°çš„å€¼ã€‚
      * </pre>
      *
      * @param str
@@ -33,39 +33,39 @@ public class Solution {
             return 0;
         }
 
-        // Èç¹û×Ö·û´®ÒÔ¿Õ¸ñ¿ªÊ¼
-        int start = 0; //´Ó¿ªÊ¼ÕÒµÚÒ»¸ö²»ÊÇ¿Õ¸ñµÄÊı
-        boolean positive = true; // ÊÇ·ñÎªÕıÊıÄ¬ÈÏÎªtrue
+        // å¦‚æœå­—ç¬¦ä¸²ä»¥ç©ºæ ¼å¼€å§‹
+        int start = 0; //ä»å¼€å§‹æ‰¾ç¬¬ä¸€ä¸ªä¸æ˜¯ç©ºæ ¼çš„æ•°
+        boolean positive = true; // æ˜¯å¦ä¸ºæ­£æ•°é»˜è®¤ä¸ºtrue
 
         if (str.charAt(start) == ' ') {
             while (str.charAt(start) == ' ') {
                 start++;
-                if (start >= str.length()) { // ÊäÈëµÄÈ«ÊÇ¿Õ¸ñ
+                if (start >= str.length()) { // è¾“å…¥çš„å…¨æ˜¯ç©ºæ ¼
 //                    throw new NumberFormatException("Invalid input string: " + str);
                     return 0;
                 }
             }
         }
 
-        if (str.charAt(start) == '-') { // µÚÒ»¸ö·Ç¿Õ°××Ö·ûÖĞ-
+        if (str.charAt(start) == '-') { // ç¬¬ä¸€ä¸ªéç©ºç™½å­—ç¬¦ä¸­-
             positive = false;
             start++;
-        } else if (str.charAt(start) == '+') {// µÚÒ»¸ö·Ç¿Õ°××Ö·ûÊÇ+
+        } else if (str.charAt(start) == '+') {// ç¬¬ä¸€ä¸ªéç©ºç™½å­—ç¬¦æ˜¯+
             start++;
-        } else if (str.charAt(start) >= '0' && str.charAt(start) <= '9') { // µÚÒ»¸ö·Ç¿Õ°××Ö·ûÊÇÊı×Ö
+        } else if (str.charAt(start) >= '0' && str.charAt(start) <= '9') { // ç¬¬ä¸€ä¸ªéç©ºç™½å­—ç¬¦æ˜¯æ•°å­—
             return cal(str, start, true);
-        } else { // ÆäËüÇé¿ö¾ÍÅ×³öÒì³£
+        } else { // å…¶å®ƒæƒ…å†µå°±æŠ›å‡ºå¼‚å¸¸
 //            throw new NumberFormatException("Invalid input string: " + str);
             return 0;
         }
 
 
-        if (start >= str.length()) { // µÚÒ»¸ö·Ç¿Õ°××Ö·ûÊÇ+»òÕß-µ«Ò²ÊÇ×îºóÒ»¸ö×Ö·û
+        if (start >= str.length()) { // ç¬¬ä¸€ä¸ªéç©ºç™½å­—ç¬¦æ˜¯+æˆ–è€…-ä½†ä¹Ÿæ˜¯æœ€åä¸€ä¸ªå­—ç¬¦
 //            throw new NumberFormatException("Invalid input string: " + str);
             return 0;
         }
 
-        if (str.charAt(start) > '9' || str.charAt(start) < '0') { // +»òÕß-ºóÃæ½ÓµÄ²»ÊÇÊı×Ö
+        if (str.charAt(start) > '9' || str.charAt(start) < '0') { // +æˆ–è€…-åé¢æ¥çš„ä¸æ˜¯æ•°å­—
 //            throw new NumberFormatException("Invalid input string: " + str);
             return 0;
         } else {
@@ -79,7 +79,7 @@ public class Solution {
         while (start < str.length() && str.charAt(start) >= '0' && str.charAt(start) <= '9') {
             result = result * 10 + (str.charAt(start) - '0');
 
-            if (positive) { // Èç¹ûÊÇÕıÊı
+            if (positive) { // å¦‚æœæ˜¯æ­£æ•°
                 if (result > Integer.MAX_VALUE) {
 //                    throw new NumberFormatException("Invalid input string: " + str);
                     return Integer.MAX_VALUE;

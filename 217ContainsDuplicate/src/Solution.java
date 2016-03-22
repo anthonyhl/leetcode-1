@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-18
  * Time: 09:40
  * Declaration: All Rights Reserved !!!
@@ -15,26 +15,26 @@ public class Solution {
      * Your function should return true if any value appears at least twice in the
      * array, and it should return false if every element is distinct.
      * <p>
-     * ÌâÄ¿´óÒâ£º¸ø¶¨Ò»¸öÕûÊıÊı×é£¬ÅĞ¶ÏÊı×éÖĞÊÇ·ñ°üº¬ÖØ¸´ÔªËØ¡£Èç¹ûÊı×éÖĞÈÎÒâÒ»¸öÊı×Ö³öÏÖÁËÖÁÉÙÁ½´Î£¬
-     * ÄãµÄº¯ÊıÓ¦¸Ã·µ»Øtrue£¬Èç¹ûÃ¿Ò»¸öÔªËØ¶¼ÊÇÎ¨Ò»µÄ£¬·µ»Øfalse¡£
+     * é¢˜ç›®å¤§æ„ï¼šç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„ï¼Œåˆ¤æ–­æ•°ç»„ä¸­æ˜¯å¦åŒ…å«é‡å¤å…ƒç´ ã€‚å¦‚æœæ•°ç»„ä¸­ä»»æ„ä¸€ä¸ªæ•°å­—å‡ºç°äº†è‡³å°‘ä¸¤æ¬¡ï¼Œ
+     * ä½ çš„å‡½æ•°åº”è¯¥è¿”å›trueï¼Œå¦‚æœæ¯ä¸€ä¸ªå…ƒç´ éƒ½æ˜¯å”¯ä¸€çš„ï¼Œè¿”å›falseã€‚
      *
-     * ½âÌâË¼Â·£ºÓÃsetÊı¾İ½á¹¹
+     * è§£é¢˜æ€è·¯ï¼šç”¨setæ•°æ®ç»“æ„
      *
      * @param nums
      * @return
      */
     public boolean containsDuplicate(int[] nums) {
 
-        // ÔªËØ¸öÊı´óÓÚ1²Å½øĞĞÏÂÃæµÄ²Ù×÷
+        // å…ƒç´ ä¸ªæ•°å¤§äº1æ‰è¿›è¡Œä¸‹é¢çš„æ“ä½œ
         if (nums != null && nums.length > 1) {
-            //´´½¨Ò»¸öhashSet
+            //åˆ›å»ºä¸€ä¸ªhashSet
             Set<Integer> set = new HashSet<>(nums.length);
             for(int i : nums) {
-                // Èç¹ûÔªËØÒÑ¾­´æÔÚ¾Í·µ»Øtrue
+                // å¦‚æœå…ƒç´ å·²ç»å­˜åœ¨å°±è¿”å›true
                 if (set.contains(i)) {
                     return true;
                 }
-                // Ã»ÓĞ¾ÍÌí¼Óµ½ÔªËØ¼¯ºÏÖĞ
+                // æ²¡æœ‰å°±æ·»åŠ åˆ°å…ƒç´ é›†åˆä¸­
                 else {
                     set.add(i);
                 }

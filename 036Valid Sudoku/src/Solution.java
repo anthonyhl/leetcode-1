@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:59
  * Declaration: All Rights Reserved !!!
@@ -7,7 +7,7 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
      * The Sudoku board could be partially filled, where empty cells are filled
      * with the character '.'.
@@ -17,52 +17,52 @@ public class Solution {
      * A valid Sudoku board (partially filled) is not necessarily solvable.
      * Only the filled cells need to be validated.
      *
-     * ÌâÄ¿´óÒâ
-     * ÑéÖ¤Ò»¸öÊı¶ÀÆåÅÌÊÇ·ñºÏ·¨£¬Êı¶ÀÆåÅÌµÄÑéÖ¤¹æÔò¼ûÁ´½Ó¶ÔÓ¦µÄÒ³Ãæ¡£
-     * Êı¶ÀÆåÅÌÊÇ²¿·ÖÌîÂúµÄ£¬¿ÕµÄÎ»ÖÃÊ¹ÓÃµãÀ´´úÌæ¡£
-     * ×¢Òâ£ººÏ·¨µÄÆåÅÌ²»Ò»¶¨ÒªÇóµÄ¿É½âµÄ£¬Ö»ÒªÌî³äµÄÊı×ÖÂú×ãÒªÇó¾Í¿ÉÒÔ¡£
+     * é¢˜ç›®å¤§æ„
+     * éªŒè¯ä¸€ä¸ªæ•°ç‹¬æ£‹ç›˜æ˜¯å¦åˆæ³•ï¼Œæ•°ç‹¬æ£‹ç›˜çš„éªŒè¯è§„åˆ™è§é“¾æ¥å¯¹åº”çš„é¡µé¢ã€‚
+     * æ•°ç‹¬æ£‹ç›˜æ˜¯éƒ¨åˆ†å¡«æ»¡çš„ï¼Œç©ºçš„ä½ç½®ä½¿ç”¨ç‚¹æ¥ä»£æ›¿ã€‚
+     * æ³¨æ„ï¼šåˆæ³•çš„æ£‹ç›˜ä¸ä¸€å®šè¦æ±‚çš„å¯è§£çš„ï¼Œåªè¦å¡«å……çš„æ•°å­—æ»¡è¶³è¦æ±‚å°±å¯ä»¥ã€‚
      *
-     * ½âÌâË¼Â·
-     * ÏÈ¶ÔĞĞ½øĞĞ¼ì²é£¬ÔÙ¶ÔÁĞ½øĞĞ¼ì²é£¬×îºó¼ì²é£³*£³µÄ·½¸ñ¡£
+     * è§£é¢˜æ€è·¯
+     * å…ˆå¯¹è¡Œè¿›è¡Œæ£€æŸ¥ï¼Œå†å¯¹åˆ—è¿›è¡Œæ£€æŸ¥ï¼Œæœ€åæ£€æŸ¥ï¼“*ï¼“çš„æ–¹æ ¼ã€‚
      * </pre>
      *
      * @param board
      * @return
      */
     public boolean isValidSudoku(char[][] board) {
-        // .µÄASCIIÖµÊÇ46£¬0µÄASCIIÖµÊÇ48£¬/µÄASCIIÖµÊÇ47
+        // .çš„ASCIIå€¼æ˜¯46ï¼Œ0çš„ASCIIå€¼æ˜¯48ï¼Œ/çš„ASCIIå€¼æ˜¯47
         int number = board[0].length;
-        int[] record = new int[10 + 2]; //±£´æ.µ½9µÄÖµ£¬±£´æÊı¾İµÄÎ»ÖÃÔÚ[2, 10]
+        int[] record = new int[10 + 2]; //ä¿å­˜.åˆ°9çš„å€¼ï¼Œä¿å­˜æ•°æ®çš„ä½ç½®åœ¨[2, 10]
         boolean isValid;
         reset(record);
 
-        // ¶ÔĞĞ½øĞĞ¼ì²é
+        // å¯¹è¡Œè¿›è¡Œæ£€æŸ¥
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; j++) {
                 record[board[i][j] - '.']++;
             }
 
-            if (!check(record)) { // ÈçÊÇ¼ì²éÊ§°Ü
+            if (!check(record)) { // å¦‚æ˜¯æ£€æŸ¥å¤±è´¥
                 return false;
-            } else { // ¼ì²é³É¹¦ÖØÖÃÆåÅÌ
+            } else { // æ£€æŸ¥æˆåŠŸé‡ç½®æ£‹ç›˜
                 reset(record);
             }
         }
 
-        // ¶ÔÁĞ½øĞĞ¼ì²é
+        // å¯¹åˆ—è¿›è¡Œæ£€æŸ¥
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; j++) {
                 record[board[j][i] - '.']++;
             }
 
-            if (!check(record)) { // ÈçÊÇ¼ì²éÊ§°Ü
+            if (!check(record)) { // å¦‚æ˜¯æ£€æŸ¥å¤±è´¥
                 return false;
-            } else { // ¼ì²é³É¹¦ÖØÖÃÆåÅÌ
+            } else { // æ£€æŸ¥æˆåŠŸé‡ç½®æ£‹ç›˜
                 reset(record);
             }
         }
 
-        // ¼ì²é3*3·½¿é
+        // æ£€æŸ¥3*3æ–¹å—
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
 
@@ -72,9 +72,9 @@ public class Solution {
                     }
                 }
 
-                if (!check(record)) { // ÈçÊÇ¼ì²éÊ§°Ü
+                if (!check(record)) { // å¦‚æ˜¯æ£€æŸ¥å¤±è´¥
                     return false;
-                } else { // ¼ì²é³É¹¦ÖØÖÃÆåÅÌ
+                } else { // æ£€æŸ¥æˆåŠŸé‡ç½®æ£‹ç›˜
                     reset(record);
                 }
             }
@@ -91,10 +91,10 @@ public class Solution {
     }
 
     /**
-     * ¼ì²éÆåÅÌÒ»ĞĞ£¬Ò»ÁĞ£¬»òÕß3*3µÄ·½¸ñÊÇ·ñºÏ·¨£¬Èç¹û1-9ÖĞµÄÊı×Ö¸öÊı´óÓÚ1¾Í²»ºÏ·¨
+     * æ£€æŸ¥æ£‹ç›˜ä¸€è¡Œï¼Œä¸€åˆ—ï¼Œæˆ–è€…3*3çš„æ–¹æ ¼æ˜¯å¦åˆæ³•ï¼Œå¦‚æœ1-9ä¸­çš„æ•°å­—ä¸ªæ•°å¤§äº1å°±ä¸åˆæ³•
      *
-     * @param a ÑéÖ¤Êı×Ö
-     * @return ·µ»Ø½á¹û
+     * @param a éªŒè¯æ•°å­—
+     * @return è¿”å›ç»“æœ
      */
     private boolean check(int[] a) {
         for (int i = 2; i < a.length; i++) {

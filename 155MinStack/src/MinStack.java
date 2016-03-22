@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:25
  * Declaration: All Rights Reserved !!!
@@ -7,26 +7,26 @@
 public class MinStack {
     private final static int DEFAULT_SIZE = 1000;
     private int[] stack;
-    private int[] minIndex; // ÓÃÓÚ±£´æÇ°n¸öÊı¾İµÄÕ»ÖĞ×îĞ¡ÔªËØµÄÏÂ±ê
-    private int min = Integer.MAX_VALUE; // ÓÃÓÚ¼ÇÂ¼²åÈë¹ı³ÌÖĞµÄ×îĞ¡Êı¾İ
-    private int index = -1; // ¼ÇÂ¼×îĞ¡ÔªËØÔÚstackÖĞµÄÎ»ÖÃ
+    private int[] minIndex; // ç”¨äºä¿å­˜å‰nä¸ªæ•°æ®çš„æ ˆä¸­æœ€å°å…ƒç´ çš„ä¸‹æ ‡
+    private int min = Integer.MAX_VALUE; // ç”¨äºè®°å½•æ’å…¥è¿‡ç¨‹ä¸­çš„æœ€å°æ•°æ®
+    private int index = -1; // è®°å½•æœ€å°å…ƒç´ åœ¨stackä¸­çš„ä½ç½®
     private int current = -1;
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Design a stack that supports push, pop, top, and retrieving
      * the minimum element in constant time.
-     * push(x) ¨C Push element x onto stack.
-     * pop() ¨C Removes the element on top of the stack.
-     * top() ¨C Get the top element.
-     * getMin() ¨C Retrieve the minimum element in the stack.
+     * push(x) â€“ Push element x onto stack.
+     * pop() â€“ Removes the element on top of the stack.
+     * top() â€“ Get the top element.
+     * getMin() â€“ Retrieve the minimum element in the stack.
      *
-     * ÌâÄ¿´óÒâ
-     * Éè¼ÆÒ»¸öÕ»£¬Ö§³Öpush£¬pop£¬top£¬ºÍ²éÕÒ×îĞ¡µÄÔªËØ²Ù×÷£¨³£Á¿Ê±¼ä£©
+     * é¢˜ç›®å¤§æ„
+     * è®¾è®¡ä¸€ä¸ªæ ˆï¼Œæ”¯æŒpushï¼Œpopï¼Œtopï¼Œå’ŒæŸ¥æ‰¾æœ€å°çš„å…ƒç´ æ“ä½œï¼ˆå¸¸é‡æ—¶é—´ï¼‰
      *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃÒ»¸ö¸¨ÖúÕ»À´±£´æÕ»ÖĞµÄ×îĞ¡ÔªËØ¡£
+     * è§£é¢˜æ€è·¯
+     * ä½¿ç”¨ä¸€ä¸ªè¾…åŠ©æ ˆæ¥ä¿å­˜æ ˆä¸­çš„æœ€å°å…ƒç´ ã€‚
      * </pre>
      */
     public MinStack() {
@@ -40,9 +40,9 @@ public class MinStack {
     }
 
     public void push(int x) {
-        current++; // ÒÆ¶¯µ½Òª²åÈëµÄÎ»ÖÃ
+        current++; // ç§»åŠ¨åˆ°è¦æ’å…¥çš„ä½ç½®
 
-        if (current >= stack.length) { // À©Èİ
+        if (current >= stack.length) { // æ‰©å®¹
             int[] tmp = new int[current * 2];
             System.arraycopy(stack, 0, tmp, 0, stack.length);
             stack = tmp;
@@ -52,11 +52,11 @@ public class MinStack {
             minIndex = tmp;
         }
 
-        stack[current] = x; // ²åÈëÊı¾İ
+        stack[current] = x; // æ’å…¥æ•°æ®
 
-        if (x < min) { // ±£´æ²åÈëµÄ×îĞ¡Öµ
+        if (x < min) { // ä¿å­˜æ’å…¥çš„æœ€å°å€¼
             min = x;
-            index = current; // ¼ÇÂ¼[0, current]ÖĞ×îĞ¡µÄÔªËØÏÂ±êÊÇindex
+            index = current; // è®°å½•[0, current]ä¸­æœ€å°çš„å…ƒç´ ä¸‹æ ‡æ˜¯index
         }
 
         minIndex[current] = index;
@@ -65,8 +65,8 @@ public class MinStack {
     public void pop() {
         current--;
         if (current >= 0) {
-            min = stack[minIndex[current]]; // ÖØĞÂÉèÖÃÕ»ÖĞµÄ×îĞ¡Öµ
-            index = minIndex[current]; // ÖØÖÃ×îĞ¡ÖµµÄË÷Òı
+            min = stack[minIndex[current]]; // é‡æ–°è®¾ç½®æ ˆä¸­çš„æœ€å°å€¼
+            index = minIndex[current]; // é‡ç½®æœ€å°å€¼çš„ç´¢å¼•
         }
     }
 

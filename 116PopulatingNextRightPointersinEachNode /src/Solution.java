@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-18
  * Time: 10:43
  * Declaration: All Rights Reserved !!!
@@ -40,13 +40,13 @@ public class Solution {
      *  / \  / \
      * 4->5->6->7 -> NULL
      *
-     * »ù±¾Ë¼Â·£º
-     * ½«Ê÷µÄÃ¿Ò»²ã½ÚµãÓÃnext´®ÆðÀ´¡£ÕâÑùÃ¿Ò»²ãÒ²»áÐÎ³ÉÒ»¸öµ¥Á´±í¡£
-     * ¶øÃ¿²ãµÄÁ´±íÍ·£¬ÔòÊÇ£¬¸ùµÄ×óº¢×Ó£¬×óº¢×Ó£¬×óº¢×Ó¡£
-     * ÀûÓÃË«Ñ­»·£¬Íâ²ãÑ­»·£¬ÑØ×Å¸ùµÄ×óº¢×Ó£¬Ò»Ö±ÏòÏÂ¡£
-     * ÄÚ²ãÑ­»·£¬¸ºÔð½«ÏÂÒ»²ãµÄ½Úµã´®ÆðÀ´¡£
+     * åŸºæœ¬æ€è·¯ï¼š
+     * å°†æ ‘çš„æ¯ä¸€å±‚èŠ‚ç‚¹ç”¨nextä¸²èµ·æ¥ã€‚è¿™æ ·æ¯ä¸€å±‚ä¹Ÿä¼šå½¢æˆä¸€ä¸ªå•é“¾è¡¨ã€‚
+     * è€Œæ¯å±‚çš„é“¾è¡¨å¤´ï¼Œåˆ™æ˜¯ï¼Œæ ¹çš„å·¦å­©å­ï¼Œå·¦å­©å­ï¼Œå·¦å­©å­ã€‚
+     * åˆ©ç”¨åŒå¾ªçŽ¯ï¼Œå¤–å±‚å¾ªçŽ¯ï¼Œæ²¿ç€æ ¹çš„å·¦å­©å­ï¼Œä¸€ç›´å‘ä¸‹ã€‚
+     * å†…å±‚å¾ªçŽ¯ï¼Œè´Ÿè´£å°†ä¸‹ä¸€å±‚çš„èŠ‚ç‚¹ä¸²èµ·æ¥ã€‚
      *
-     * ¼´£¬½«×Ô¼ºÓÒº¢×Ó·Åµ½×óº¢×ÓµÄnextÉÏ£¬¶øÓÒº¢×Ó£¬Ôò¿ÉÍ¨¹ý×Ô¼ºµÄnextÖ¸Õë£¬ÕÒµ½ÓÒÁÚ¾Ó¡£
+     * å³ï¼Œå°†è‡ªå·±å³å­©å­æ”¾åˆ°å·¦å­©å­çš„nextä¸Šï¼Œè€Œå³å­©å­ï¼Œåˆ™å¯é€šè¿‡è‡ªå·±çš„nextæŒ‡é’ˆï¼Œæ‰¾åˆ°å³é‚»å±…ã€‚
      * </pre>
      *
      * @param root
@@ -54,29 +54,29 @@ public class Solution {
     public void connect(TreeLinkNode root) {
 
         TreeLinkNode node;
-        // ÌâÖÐ¼ÙÉèÁËÊäÈëµÄÊ÷ÊÇÒ»¿ÃÍêÈ«²æÊ÷
-        // µÚÒ»¸öÑ­»·ÓÃÀ´´¦ÀíÕû¸öÊ÷
-        // root.left != nullÈç¹û²»ÓÃ£¬Ôò´¦Àíµ½×îºóµÚÒ»¸öÃ»ÓÐ×óÓÒ×ÓÊ÷µÄ½áµã»á³ö´í
+        // é¢˜ä¸­å‡è®¾äº†è¾“å…¥çš„æ ‘æ˜¯ä¸€æ£µå®Œå…¨å‰æ ‘
+        // ç¬¬ä¸€ä¸ªå¾ªçŽ¯ç”¨æ¥å¤„ç†æ•´ä¸ªæ ‘
+        // root.left != nullå¦‚æžœä¸ç”¨ï¼Œåˆ™å¤„ç†åˆ°æœ€åŽç¬¬ä¸€ä¸ªæ²¡æœ‰å·¦å³å­æ ‘çš„ç»“ç‚¹ä¼šå‡ºé”™
         while (root != null && root.left != null) {
-            // Ã¿¸öroot±íÊ¾µÚÒ»¸ö²ãµÄµÚÒ»¸ö½áµã
-            // node¼ÇÂ¼Ã¿Ò»¸ö²ãµÄµÚÒ»¸ö½áµã
+            // æ¯ä¸ªrootè¡¨ç¤ºç¬¬ä¸€ä¸ªå±‚çš„ç¬¬ä¸€ä¸ªç»“ç‚¹
+            // nodeè®°å½•æ¯ä¸€ä¸ªå±‚çš„ç¬¬ä¸€ä¸ªç»“ç‚¹
             node = root;
 
-            // ´¦ÀíÃ¿¸ö²ã
+            // å¤„ç†æ¯ä¸ªå±‚
             while (node != null) {
-                // ±íÊ¾Á¬½ÓµÄÊÇÍ¬Ò»¸ö½áµãµÄÏÂµÄÁ½×Ó½áµã
+                // è¡¨ç¤ºè¿žæŽ¥çš„æ˜¯åŒä¸€ä¸ªç»“ç‚¹çš„ä¸‹çš„ä¸¤å­ç»“ç‚¹
                 node.left.next = node.right;
-                // node²»ÊÇÄ³¸ö²ãµÄ×îºóÒ»¸ö½áµã
+                // nodeä¸æ˜¯æŸä¸ªå±‚çš„æœ€åŽä¸€ä¸ªç»“ç‚¹
                 if (node.next != null) {
-                    // ½«Õâ¸ö½áµãµÄÓÒ×Ó½áµãÁ¬½Óµ½Õâ¸ö½áµãµÄÍ¬²ãÏàÁÚ½áµãµÄ×ó×Ó½áµãÉÏ
+                    // å°†è¿™ä¸ªç»“ç‚¹çš„å³å­ç»“ç‚¹è¿žæŽ¥åˆ°è¿™ä¸ªç»“ç‚¹çš„åŒå±‚ç›¸é‚»ç»“ç‚¹çš„å·¦å­ç»“ç‚¹ä¸Š
                     node.right.next = node.next.left;
                 }
 
-                // ÒÆ¶¯µ½Í¬²ãµÄÏÂÒ»¸ö½áµã
+                // ç§»åŠ¨åˆ°åŒå±‚çš„ä¸‹ä¸€ä¸ªç»“ç‚¹
                 node = node.next;
             }
 
-            // ÒÆ¶¯µ½ÏÂÒ»²ãµÄµÚÒ»¸ö½áµã
+            // ç§»åŠ¨åˆ°ä¸‹ä¸€å±‚çš„ç¬¬ä¸€ä¸ªç»“ç‚¹
             root = root.left;
         }
 
